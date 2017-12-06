@@ -1,0 +1,220 @@
+html, body {
+	height: 100%;
+    background: $dark-gray;
+}
+
+
+.site-container {
+    
+    padding-top: 72px;
+    
+    @include breakpoint(medium) {
+        padding-top: 86px;   
+    }
+    
+    @include breakpoint(xlarge) {
+        padding-top: 127px;   
+    }
+}
+
+
+.site-content {
+    background: #fff; 
+    
+    .content-area,
+    .widget-area {
+        padding-bottom: 40px;     
+    }
+}
+
+.social-icons {
+		
+    @include list-reset;
+    margin-left: -15px;
+    
+    text-align: center;
+    
+    @media #{$large-up} {
+        text-align: left;
+    }
+    
+    li {
+        display: inline-block;	
+        margin-left: 15px;
+    }
+    
+    a {
+        display: block;
+        width: 36px;
+        height: 36px;
+        border-radius: 100%;
+        position: relative;
+        
+        svg {
+            height: 26px;
+            width: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        
+        &:hover {
+            
+        }
+    }
+        
+}
+
+
+.site-header .social-icons,
+.footer-widgets .social-icons {
+		    
+    a {
+        background-color: $pink;
+        
+        svg {
+            fill: #fff;	
+        }
+    }
+        
+}
+
+.site-header .social-icons {
+		    
+    a:hover {
+        background-color: $dark-gray;
+    }
+        
+}
+
+.footer-widgets .social-icons {
+		    
+    a:hover {
+        background-color: #fff;
+        
+        svg {
+            fill: $pink;   
+        }
+    }
+        
+}
+
+.modal-menu .social-icons {
+		   
+    background: $pink;
+    padding: 26px 0 21px;
+    text-align: center;
+     
+    a {
+        background-color: #fff;
+        
+        &:hover {
+            background-color: $light-gray;
+        }
+        
+        svg {
+            fill: $pink;	
+        }
+    }
+        
+}
+
+
+.search-form {
+    
+    text-align: center;
+     
+    form {
+        display: flex;
+    }
+     
+    select,
+    .search-field,
+    .search-submit {
+         margin-bottom: 15px;
+         height: 40px;
+         font-size: 16px;
+      }
+    
+    select {
+        -webkit-appearance: none;
+        -webkit-border-radius: 0px;
+        background-image: url("data:image/svg+xml;utf8,<svg width='16' height='9' viewBox='0 0 16 9' xmlns='http://www.w3.org/2000/svg'><title>Fill 4</title><path d='M.758.75C.588.91.5 1.13.5 1.343c0 .212.09.433.258.594l6.617 6.316c.17.16.392.246.624.246.23 0 .453-.085.622-.246l6.617-6.316c.347-.33.347-.858 0-1.19-.348-.33-.9-.33-1.247 0L8 6.47 2.004.75C1.658.427 1.097.427.758.75z' fill='#252B33' fill-rule='evenodd'/></svg>");
+        background-position: 90% 50%;
+        background-repeat: no-repeat;	
+        width: auto;
+        background-color: #ececec;
+        //font-size: 14px;
+        line-height: 20px;
+        
+        padding: 10px 25px 10px 10px;
+        border: none;
+        border-radius: 0;
+        outline: none;
+       
+         
+    }
+    
+    input[type="search"] {
+        -webkit-appearance: none!important; 
+        border-radius: 0!important;         
+    }
+    
+    .search-field {
+        line-height: 20px;
+        padding: 10px 10px;
+         border: none;
+        border-radius: 0;
+        outline: none;  
+        box-shadow: inset 0 0 4px 0 rgba(#000, .2);
+        width: 100%;
+        
+        
+    }
+    
+    button {
+        background-color: #ececec;
+        padding: 0 10px;
+        border: none;
+        border-radius: 0;
+        outline: none;   
+        cursor: pointer;
+    }
+    
+    .search-submit {
+        flex-grow: 0;
+        position: relative;
+        width: 40px;
+         svg {
+            width: 20px;   
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+       
+}
+
+#sbi_load {
+    margin-top: 30px;    
+}
+
+.sbi_load_btn {
+    background-color: $pink!important;
+    
+    &:hover {
+        background-color: $dark-gray!important;   
+    }
+}
+
+
+ul[class*="simple-sitemap"] {
+    @include list-reset;
+    margin-bottom: $global-margin;   
+    
+    li {
+        padding-bottom: 5px;   
+    }
+}

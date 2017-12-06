@@ -1,0 +1,141 @@
+/*
+Header
+---------------------------------------------- */
+
+
+.site-header {
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 10;
+    
+    border-bottom: 1px solid $pink;
+    
+    @include breakpoint( xxlarge ) {
+        border: none;   
+    }
+    
+    .logged-in & {
+         
+        top: 46px;
+        
+        @media screen and (min-width: 783px) {
+            top: 32px;
+        }
+        
+        
+    }
+    
+    @media screen and (max-width: 782px) {
+        #wpadminbar {
+          height: 46px;
+            font-size: 1.8em;
+            font-weight: 700;
+            line-height: 46px;
+        }
+        .is-sticky > .nav.logged-in {margin-top: 46px;}
+}
+
+@media screen and (max-width: 600px) {
+  #wpadminbar {
+    position: absolute;
+        top: 0;
+        left: 0;
+    }
+  .nav ul {display: none;}
+    .fa-bars {display: inline-block;}
+    .is-sticky > .nav.logged-in {margin-top: 0px;}
+}
+    
+    
+    
+    .wrap {
+        position: relative;   
+    }
+	
+    button {
+        outline: none;
+        border: none;  
+        cursor: pointer;
+        
+        @include breakpoint(large) {
+            margin-right: 15px;    
+        }
+    }
+    
+    .buttons,
+    .social-icons {
+        
+        @include breakpoint(large) {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 9;
+        }
+    }
+    
+    .menu-toggle {
+     
+        @include breakpoint(large down) {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 9;
+        }
+        
+    }
+    
+    .search-toggle {
+     
+        svg {
+            width: 30px; 
+            height: 30px;  
+        }
+        
+        @include breakpoint(large down) {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+    }
+    
+    .site-branding {
+        text-align: center;
+    }
+    
+    .site-title {
+        
+        display: inline-block;   
+        
+        @include breakpoint(small only) {
+            width: 200px;
+        }
+        
+        position: relative;
+         
+        a {
+           display: inline-block;   
+        }
+        
+        img {
+            display: block;
+            margin: 0 auto;   
+        }
+    }
+    
+    .social-icons {
+        display: none;
+        
+        @include breakpoint(large) {
+            display: block;
+            right: 15px;
+        }
+    }
+    
+}

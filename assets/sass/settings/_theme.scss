@@ -1,0 +1,110 @@
+//  Settings (includes overrides for sass/foundation/settings.scss)
+//  -----------------------------
+//
+//  Table of Contents:
+//
+//   1. Global
+//   2. Breakpoints
+//   3. The Grid
+//   4. Base Typography
+
+
+// 1. Global
+// ---------
+
+$light-gray: #ececec;
+$gray: #4A4A4A;
+$dark-gray: #252b33;
+
+$pink: #fb5ba1;
+$dark-pink: #F73187;
+
+
+$global-font-size: 100%;
+$global-width: 1190px;
+$global-lineheight: 1.4;
+
+$body-background: #fff;
+$body-font-color: $gray;
+$body-font-family: 'Raleway', sans-serif;
+
+$global-margin: 30px;
+$global-padding: 10px;
+$global-weight-normal: normal;
+$global-weight-bold: 700;
+$global-radius: 0;
+$global-text-direction: ltr;
+
+
+// 2. Breakpoints
+// --------------
+
+$breakpoints: (
+  small: 0,
+  medium: 640px,
+  large: 980px,
+  xlarge: 1024px,
+  xxlarge: 1200px,
+  xxxlarge: 1440px
+);
+// must match $breakpoints
+$breakpoint-classes: (small medium large xlarge xxlarge xxxlarge);
+
+
+// 3. The Grid
+// -----------
+
+$grid-row-width: $global-width;
+$grid-column-count: 12; // usually 12
+$grid-column-gutter: (
+  small: 24px,
+  medium: 24px
+);
+$grid-column-align-edge: true;
+$block-grid-max: 8;
+
+
+// 4. Base Typography
+// ---------
+
+$header-font-family: 'Playfair Display', serif;
+$header-font-weight: 400;
+$header-font-style: normal;
+
+/// Styles for headings at various screen sizes. Each key is a breakpoint, and each value is a map of heading styles.
+/// @type Map
+$header-styles: (
+  small: (
+    'h1': ('font-size': 36),
+    'h2': ('font-size': 30),
+    'h3': ('font-size': 22),
+    'h4': ('font-size': 20),
+    'h5': ('font-size': 16),
+    'h6': ('font-size': 15),
+  ),
+  medium: (
+    'h1': ('font-size': 42),
+    'h2': ('font-size': 30),
+    'h3': ('font-size': 22),
+    'h4': ('font-size': 20),
+    'h5': ('font-size': 16),
+    'h6': ('font-size': 15),
+  ),
+) !default;
+
+$header-color: $dark-gray;
+$header-lineheight: 1.33;
+$header-margin-bottom: 30px;
+$small-font-size: 80%;
+$header-small-font-color: $gray;
+
+$paragraph-font-family: $body-font-family;
+$paragraph-font-style: normal;
+$paragraph-font-weight: 400;
+$paragraph-font-size: 15px;
+$paragraph-line-height: 1.73;
+$paragraph-font-color: $gray;
+$paragraph-margin-bottom: 30px;
+
+$anchor-color: #333;
+$anchor-color-hover: scale-color(#333, $lightness: 20%);

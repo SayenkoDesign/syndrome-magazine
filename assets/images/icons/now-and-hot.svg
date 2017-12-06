@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="21px" viewBox="0 0 26 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>Current Affairs Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="12.831 0.2 0.06 0.2 0.06 21.001 25.602 21.001 25.602 0.2"></polygon>
+    </defs>
+    <g id="Mockups" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home" transform="translate(-128.000000, -1299.000000)">
+            <g id="Group-12" transform="translate(118.000000, 1290.000000)">
+                <g id="Current-Affairs-Icon" transform="translate(10.000000, 9.000000)">
+                    <g id="Group-3">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-2"></g>
+                        <path d="M22.398,3.399 L22.398,0.2 L0,0.2 L0,17.802 C0,17.802 0,21.001 3.199,21.001 L23.199,21.001 C23.199,21.001 25.602,20.95 25.602,17.802 L25.602,3.399 L22.398,3.399 Z M3.199,19.399 C1.602,19.399 1.602,17.802 1.602,17.802 L1.602,1.802 L20.801,1.802 L20.801,17.802 C20.801,18.536 21.027,19.048 21.34,19.399 L3.199,19.399 Z" id="Fill-1" fill="#FFFFFF" mask="url(#mask-2)"></path>
+                    </g>
+                    <polygon id="Fill-4" fill="#FFFFFF" points="3.199 6.599 19.199 6.599 19.199 5.001 3.199 5.001"></polygon>
+                    <polygon id="Fill-5" fill="#FFFFFF" points="12 16.2 17.602 16.2 17.602 14.598 12 14.598"></polygon>
+                    <polygon id="Fill-6" fill="#FFFFFF" points="12 13.001 19.199 13.001 19.199 11.399 12 11.399"></polygon>
+                    <polygon id="Fill-7" fill="#FFFFFF" points="12 9.802 19.199 9.802 19.199 8.2 12 8.2"></polygon>
+                    <polygon id="Fill-8" fill="#FFFFFF" points="3.199 16.2 10.398 16.2 10.398 8.2 3.199 8.2"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,146 @@
+//
+// Comments
+//  --------------------------------------------------
+
+.comments-area {
+    padding: 30px 0;   
+}
+
+.comments-title {
+    margin-bottom: 30px;   
+}
+
+.comment-list {
+	
+    padding: 30px 0;
+    
+    @include list-reset;
+    
+    .comment {
+		> article {
+            margin: 0 0 30px;
+		}
+	}
+    
+    .comment-author {
+        margin-bottom: 5px;   
+    }
+    
+    
+    .comment-metadata {
+        margin-bottom: 10px;
+    }
+
+	.children {
+	}
+}
+
+.comment-header {
+	@extend .clearfix;
+
+	.comment-author {
+	}
+
+	img {
+	}
+}
+
+.comment-content {
+	@extend .entry-content;
+}
+
+.comment-respond {
+	
+    form {
+        max-width: 600px;   
+    }
+    
+    .form-submit {
+		@extend .clearfix;
+	}
+}
+
+.comment-notes,
+.logged-in-as,
+.form-allowed-tags {
+	
+}
+
+.comment-notes,
+.logged-in-as,
+.form-allowed-tags,
+.comment-form-author,
+.comment-form-email,
+.comment-form-url {
+}
+
+
+.comment-form {
+	
+	p {	
+    	
+	}
+	
+	label {
+        display: block;
+        margin: 10px 0 0 0;
+	}
+	
+	input[type="text"],
+	input[type="email"],
+	input[type="url"],
+	select,
+	textarea {
+        width: 100%;
+        outline: none;
+        border: none;
+        box-shadow: inset 0 0 4px 0 rgba(#000, .2);
+        margin: 0;
+        padding: 0 10px!important;
+        font-size: 16px;
+        -webkit-appearance: none;
+        border-radius: 0;
+	}
+    
+
+	input[type="text"],
+	input[type="email"],
+	input[type="url"],
+	select {
+        height: 42px;
+	}
+    
+	
+	button.submit {
+        margin: 20px 0 0 0;
+        background-color: transparent;
+        border: 1px solid $dark-gray;
+        outline: none;
+        padding: 5px;
+        text-transform: uppercase;
+        cursor: pointer;
+        
+        span {
+            display: block;
+            width: 180px;
+            border: 1px solid $dark-gray; 
+            height: 30px;
+            line-height: 28px;
+            color: $dark-gray; 
+        }
+        
+        &:hover {
+            background-color: $pink;
+            border-color: #fff;
+            
+            span {
+                border-color: #fff;
+                color: #fff;   
+            }
+        }
+	}
+	
+}
+
+.comment-form-comment {
+}

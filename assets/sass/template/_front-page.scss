@@ -1,0 +1,411 @@
+//
+// Front Page
+//
+.home .site-main section {
+    margin-bottom: 10px;
+}
+
+.home .site-content {
+     .content-area,
+    .widget-area {
+        padding-bottom: 20px;     
+    }
+}
+
+.callout {
+    padding: 20px 0 26px;
+    text-align: center;
+    @include breakpoint(large) {
+        padding: 26px 0;
+    }
+    .entry-content {
+        display: inline-block;
+        position: relative;
+        @include breakpoint(large) {
+            padding: 0 70px 10px;
+        }
+    }
+    .close-button {
+        font-size: 40px;
+        font-weight: 300;
+        line-height: 1;
+        outline: none;
+        cursor: pointer;
+        position: relative;
+        top: -8px;
+        @include breakpoint(large) {
+            font-size: 50px;
+            position: absolute;
+            top: 0;
+            right: 15px;
+        }
+    }
+    h2 {
+        color: $pink;
+        margin-bottom: 5px;
+        @include breakpoint(large) {
+            font-size: rem-calc(43);
+        }
+    }
+    p {
+        font-family: $header-font-family;
+        @include breakpoint(large) {
+            font-size: rem-calc(20);
+        }
+    }
+}
+
+.home .featured-posts {
+    margin-bottom: 16px;
+    .post,
+    .ad-block {
+        margin-bottom: 24px;
+    }
+    
+    .wrap .row .large-8 .large-4 {
+        @include breakpoint(large) {
+            a.background {
+                height: 148px;   
+            }
+        }
+    }
+    
+    .wrap > div > div {
+        @include breakpoint(large) {
+            a.background {
+                height: 178px;   
+            }
+        }
+    }
+}
+
+.home .featured-posts .post {
+    position: relative;
+    a.background {
+        background-color: $light-gray;
+        background-size: cover;
+        display: block;
+        width: 100%;
+        height: 330px;
+        
+    }
+    
+    .term-link {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: $pink;
+        padding: 5px 15px 5px 8px;
+        color: #fff;
+        &:hover {
+            background: $dark-pink;
+        }
+        span {
+            display: inline-block;
+            padding-left: 8px;
+            vertical-align: middle;
+        }
+        svg {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 30px;
+            width: auto;
+        }
+    }
+    
+    
+    .post-description {
+        position: relative;
+        width: 100%;
+        display: block;
+        padding: 15px 10px 10px;
+        
+        .term-link {
+            transform: translateY(-100%);   
+        }
+        
+   
+        h3 a {
+            display: block;
+            margin-bottom: rem-calc(18);
+        }
+        h3:hover a {
+            color: $pink!important;
+        }
+    }
+    
+    &.large {
+        .background {
+            height: 330px;
+        }
+        .post-description {
+            padding: 24px 10px;
+        }
+    }
+    
+}
+
+.post-cards {
+    header {
+        margin-bottom: 30px;
+    }
+     
+    .cards {
+        opacity: 0;
+        visibility: visible;
+        &.slick-initialized {
+            opacity: 1;
+            transition: opacity .2s ease-in-out;
+            margin-left: map-get($grid-column-gutter, medium) * -1;  
+         }
+        padding: 40px 0;
+         .slick-track {}
+        .slick-slide {
+            display: block;
+            padding-left: map-get($grid-column-gutter, medium); 
+             
+            a {
+                border: 1px solid #d6d6d6; 
+                display: block; 
+                width: calc(100% - 2px); 
+                
+                &:hover {
+                    border-color: #666;     
+                }
+            }
+        }
+    }
+    
+}
+
+// Posts
+.home .recent-posts,
+.home .recommended-posts {
+    
+    header {
+        margin-bottom: 30px;
+    }
+      
+    .column>div {
+        margin-bottom: $global-margin;
+    }
+    .slick-slide>div {
+        margin-bottom: $global-margin;
+    }
+}
+
+
+
+.home {
+     .slick-initialized {
+        padding-top: 10px;
+        margin-top: -20px; 
+        
+        .slick-arrow {
+            margin-top: -30px;   
+        }
+    }
+}
+
+
+.home .recent-posts .post,
+.home .recommended-posts .post,
+.single-post .related-posts .post {
+    position: relative;
+    >a:first-child {
+        background-color: $light-gray;
+        background-size: cover;
+        display: block;
+        width: 100%;
+        height: 160px;
+    }
+    .term-link {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $pink;
+        padding: 5px 15px 5px 8px;
+        color: #fff;
+        &:hover {
+            background: $dark-pink;
+        }
+        span {
+            display: inline-block;
+            padding-left: 8px;
+            vertical-align: middle;
+        }
+        svg {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 30px;
+            width: auto;
+        }
+    }
+    .post-description {
+        width: 100%;
+        padding: 18px;
+        display: block;
+    }
+    .post-description {
+        h3 {
+            margin-bottom: rem-calc(18);
+            
+        }
+        
+        h3:hover a {
+            color: $pink!important;
+        }
+        
+        h4 {
+            position: relative;
+        }
+    }
+}
+
+
+.home .featured-posts .post,
+.home .recent-posts .post,
+.home .recommended-posts .post,
+.home .related-posts .post {
+    .excerpt {
+        padding-top: 10px;
+    }
+}
+
+.home .recent-posts .post,
+.home .recommended-posts .post,
+.home .related-posts .post {
+    .excerpt {
+        font-size: 14px;   
+    }
+}
+
+
+
+// Post Category colors
+.home .featured-posts .post,
+.home .recent-posts .post,
+.home .recommended-posts .post,
+.home .related-posts .post {
+    width: calc(100% - 2px);
+    border: 1px solid #d6d6d6;
+
+    &.now-hot {
+        .term-link {
+            background-color: #be4ed8;
+            &:hover {
+                background: rgba(#be4ed8, .9);
+                color: #fff;
+            }
+        }
+    }
+    &.work {
+        .term-link {
+            background-color: #f63bc0;
+            &:hover {
+                background: rgba(#f63bc0, .9);
+                color: #fff;
+            }
+        }
+    }
+    &.a-broad {
+        .term-link {
+            background-color: #3e95b0;
+            &:hover {
+                background: rgba(#3e95b0, .9);
+                color: #fff;
+            }
+        }
+    }
+    &.bra-burners {
+        // Default set in blog.scss
+        .term-link {
+            background-color: #fd2e88;
+            &:hover {
+                background: rgba(#fd2e88, .9);
+                color: #fff;
+            }
+        }
+     }
+    &.body-talk {
+        .term-link {
+            background-color: #965fb3;
+            &:hover {
+                background: rgba(#965fb3, .9);
+                color: #fff;
+            }
+        }
+    }
+    &.sex-relationships {
+        .term-link {
+            background-color: #fd314c;
+            &:hover {
+                background: rgba(#fd314c, .9);
+                color: #fff;
+            }
+        }
+    }
+    &.mamma-mia {
+        .term-link {
+            background-color: #fa5b6f;
+            &:hover {
+                background: rgba(#fa5b6f, .9);
+                color: #fff;
+            }
+        }
+    }
+    &.unlady-like {
+        .term-link {
+            background-color: #ad73e1;
+            &:hover {
+                background: rgba(#ad73e1, .9);
+                color: #fff;
+            }
+        }
+    }
+    
+}
+
+.featured-posts .post,
+.recent-posts .post,
+.recommended-posts .post,
+.related-posts .post {
+    &:hover {
+        //box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+        border-color: #666;  
+    }
+
+}
+
+.home .video-posts {
+    
+    header {
+        text-align: center;
+    }
+}
+
+.home #secondary {
+    border: 1px solid #d6d6d6;   
+    padding: 15px 24px;
+    
+    aside:last-child {
+        margin-bottom: 0;   
+    }
+}
+
+.home .widget_trending-posts,
+.home .widget_trending-videos {
+    
+    .widget-title {
+        
+        border-bottom: 1px solid #d6d6d6; 
+        padding-bottom: 30px;  
+        
+        &:before {
+            background-image: url(assets/images/icons/female-pink.svg);   
+        }
+    }
+    
+}

@@ -1,0 +1,184 @@
+
+.template-videos {
+    
+    section.hero {
+        &:after {
+            display: none;   
+        }
+    }
+    
+    .featured-posts {
+        
+        margin-bottom: 75px;
+        
+        .post a {
+            
+            display: block;
+            
+             &:not(:hover) {
+                svg circle {
+                    fill: transparent!important;   
+                }
+            }
+         }
+         
+         @include breakpoint(medium) {
+             
+             .video {
+                min-height: 300px;   
+             }
+             
+             
+             .large-8  {
+               .video {
+                    min-height: 360px;   
+                }
+                
+                svg {
+                    width: 90px; 
+                    bottom: 40px;
+                    left: 20px;
+                }
+             }
+        }
+         
+         @include breakpoint(large) {
+            
+            .large-8  {
+                
+                .video {
+                    min-height: 520px;   
+                }
+                
+            }
+            
+            .large-4 {
+                
+                .video {
+                    min-height: 0;   
+                }
+                
+                .post h3 {
+                    height: 65px; 
+                 }
+            }
+        }
+    }
+    
+}
+
+
+
+.single-video {
+ 
+    
+    .content-area {
+        padding-top: 50px;   
+    }
+    
+    .featured {
+        
+        margin-bottom: 75px;
+        
+        .post a {
+            
+            display: block;
+            
+             &:not(:hover) {
+                svg circle {
+                    fill: transparent!important;   
+                }
+            }
+         }
+         
+         @include breakpoint(medium) {
+             
+             .post .video {
+                min-height: 300px;   
+                
+                svg {
+                    width: 90px;                  
+                    bottom: 40px;
+                    left: 20px;
+                }
+             }
+                             
+             
+        }
+         
+         @include breakpoint(large) {
+            
+             .post .video {
+                min-height: 520px;   
+            }
+            
+        }
+        
+        
+        .share-icons {
+         
+            &:before {
+                display: block;
+                width: 100%;
+                color: $dark-gray; 
+                margin-bottom: 10px;  
+            }
+            
+            a {
+			    background: $pink;
+                
+                &:hover {
+                    background: $dark-gray;
+                    
+                    svg {
+                        fill: #fff;   
+                    }
+                }
+            }
+            
+        }
+        
+        
+    }
+    
+}
+
+
+
+.video-posts {
+    margin-bottom: 40px;   
+}
+
+
+.post {
+    
+    a:not(:hover) {
+        svg circle {
+            fill: transparent!important;   
+        }
+    }
+    
+    .video {
+        background-size: cover;
+        background-position: center center;
+        min-height: 0;
+        height: 220px; 
+        margin-bottom: 10px;
+        
+        position: relative;
+        
+        
+        
+        svg {
+           position: absolute;
+           left: 10px;
+           bottom: 10px; 
+           width: 60px;
+        }
+    }
+    
+    h3 {
+       margin-bottom: 5px;
+    }
+    
+}

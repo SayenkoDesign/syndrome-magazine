@@ -1,0 +1,148 @@
+// Primary Navigation
+
+// Todo: Create settings page independant variables for menu
+
+ .site-header .nav-primary {
+		display: none;
+ }
+
+@media #{$xlarge-up} {
+
+	
+    .site-header .nav-primary .menu>.menu-item.show-mobile {
+        display: none;
+    }
+    
+    .site-header .nav-primary {
+		display: block;
+		width: auto;
+        background: $pink;
+		
+		.sub-menu {
+			width: auto;
+			display: block;
+		}
+	}
+	
+	.site-header .nav-primary .menu {
+		@include list-reset;
+		background: transparent;
+		position: relative;
+        text-align: center;
+ 
+		.menu-item {
+			background: transparent;
+			border: none;
+			display: inline-block;
+			width: auto;
+			
+ 			a {
+				position: relative;
+				display: block;
+				font-size: 16px;
+				text-decoration: none;
+  			}
+ 		}
+
+		// First level
+		> .menu-item {
+ 			display: inline-block;
+ 			text-align: left;
+
+			a {
+				color: #fff;
+				padding: 8px 5px;
+			}
+			
+			.sub-menu-toggle {
+				padding: 0;
+ 				right: 0;
+				top: 4px;
+				
+				
+				&:after {
+					width: 8px;
+					height: 8px;
+ 					transform: rotate(45deg);
+				}
+			}
+  			
+			&:hover,
+			&:focus,
+			&:active {
+				
+				> a {
+					background: #fff;	
+                    color: $pink;
+				}
+				
+				> .sub-menu {
+					left: 0;
+					opacity: 1;
+					transition: opacity 200ms linear;
+
+				}
+			}
+
+			&.current-menu-item,
+			&.current_page_parent,
+			&.current-page-ancestor,
+			&.current-menu-ancestor,
+			&.current-category-ancestor {
+
+				> a {
+					background: #fff;
+                    color: $pink;
+ 				}
+			}
+
+ 		}
+
+		// Sublevels
+		.sub-menu {
+			@include list-reset;
+			position: absolute;
+			top: 100%;
+			left: -9999px;
+			z-index: 99;
+			opacity: 0;
+			padding: 10px 15px;
+			min-width: 184px;
+			background-color: rgba(255, 255, 255, 0.8);
+			border: solid red 2px;
+
+			.menu-item {
+				border: none;
+				display: block;
+				margin: 0;
+
+				> a {
+					display: block;
+					position: relative;
+					color: #4A4A4A;
+					font-size: 15px;
+					padding: 5px 0;
+ 					
+					&:hover {
+						background: transparent;
+						color: scale-color(#4A4A4A, $lightness: 20%);	
+					}
+				}
+			}
+
+			.sub-menu {
+
+			}
+		}
+
+	}
+
+}
+
+
+@media #{$xxlarge-up} { 
+
+    .site-header .nav-primary .menu > .menu-item a {
+        padding: 8px 15px;
+    }
+}

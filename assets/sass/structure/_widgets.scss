@@ -1,0 +1,361 @@
+// Widgets
+
+.sidebar-fixed {
+    position: fixed; 
+}
+
+@mixin gravity-forms-widget {
+    .validation_error {
+            display: none;   
+        }
+        
+    .validation_message {
+        padding: 5px 0 0!important;  
+        font-weight: 400; 
+    }
+    
+    .gform_wrapper {
+        margin: 0;   
+    }
+    
+    .gform_wrapper.gform_validation_error .gform_body ul li.gfield.gfield_error:not(.gf_left_half):not(.gf_right_half) {
+        max-width: 100%!important;
+    }
+    
+    .widget-title {
+        margin-bottom: 10px;   
+    }
+    
+    form {
+        
+        display: flex;
+        width: 100%;
+        
+        > * {
+            width: auto; 
+            padding: 0;
+            margin: 0;
+            clear: none;  
+        }
+        
+        .gform_body {
+            
+            flex-grow: 1;
+            
+            .ginput_container {
+                margin: 0;
+                padding: 0;   
+            }
+            
+            .gfield {
+                margin: 0;
+                padding: 0;   
+            }
+            
+            .gfield_error {
+                width: 100%;
+                border: none!important;
+             }
+            
+            input {
+                width: 100%; 
+                outline: none;
+                //border: 1px solid #979797;
+                border: none;
+                box-shadow: inset 0 0 4px 0 rgba(#000, .2);
+                height: 42px;
+                margin: 0;
+                padding: 0 10px!important;
+                font-size: 16px;
+            }
+            
+            input[type="text"] {
+                -webkit-appearance: none;
+                border-radius: 0;
+            }
+        }
+        
+        .gform_footer {
+             
+             padding-left: 10px;
+             
+             .gform_button {
+                background-color: $pink;
+                border: none;
+                outline: none;
+                padding: 5px;
+                text-transform: uppercase;
+                
+                &:hover {
+                    background-color: $dark-pink;   
+                }
+                
+                span {
+                    display: block;
+                    width: 100px;
+                    border: 1px solid #fff; 
+                    height: 32px;
+                    line-height: 32px;
+                    color: #fff; 
+                }
+                
+                @include breakpoint(480) {
+                    span {
+                        width: 140px;
+                    }
+                }
+            }
+        }
+    }   
+}
+
+.widget-area {
+ 
+    .widget {
+        margin-bottom: 40px;
+        
+        .widget-title {
+            font-size: 30px;   
+            margin-bottom: 24px;
+        }
+    }
+ 
+    .widget_search {
+        
+        .widget-title {
+            @extend %screen-reader-text;   
+        }
+        
+        select {
+            background-color: $pink!important;
+            color: #fff;
+            min-width: 150px;
+            background-image: url("data:image/svg+xml;utf8,<svg width='16' height='9' viewBox='0 0 16 9' xmlns='http://www.w3.org/2000/svg'><title>Fill 4</title><path d='M.758.75C.588.91.5 1.13.5 1.343c0 .212.09.433.258.594l6.617 6.316c.17.16.392.246.624.246.23 0 .453-.085.622-.246l6.617-6.316c.347-.33.347-.858 0-1.19-.348-.33-.9-.33-1.247 0L8 6.47 2.004.75C1.658.427 1.097.427.758.75z' fill='#fff' fill-rule='evenodd'/></svg>");
+            
+        }
+        
+        .search-submit {
+        
+            background-color: $pink;
+            
+            @include breakpoint(large) {
+                width: 54px;
+            }
+             
+            svg path {
+                fill: #fff!important; 
+            }
+        }
+    }
+    
+    
+    .widget_categories {
+     
+        ul {
+            @include list-reset;
+            margin: 0 0 20px;
+            text-align: left;
+            
+            li {
+                display: block;
+                margin: 0;
+                padding: 0 0 15px 0;   
+                
+                @media #{$medium-up} {
+                    display: inline-block;
+                    padding: 0 10px 15px 0;   
+                }
+            }
+            
+            a {
+                display: block;
+                background-color: $pink;
+                border: none;
+                outline: none;
+                padding: 5px;
+                text-transform: uppercase;
+                
+                &:hover {
+                    background: $dark-pink;  
+                }
+                
+                span {
+                    display: block;
+                    border: 1px solid #fff; 
+                    padding: 8px 15px;
+                    color: #fff; 
+                    font-size: 13px;
+                 }
+             }
+        }
+        
+    }
+    
+    
+    .gform_widget {
+        padding: 15px 0;
+        
+        @include gravity-forms-widget;
+    }
+    
+    
+    .widget_trending-videos {
+        
+        .widget-title {
+           position: relative;
+           padding-left: 44px;
+           min-height: 54px;
+           
+           &:before {
+                content: '';
+                display: block;
+                background-image: url(assets/images/icons/female.svg);
+                background-size: contain;
+                width: 34px;
+                height: 54px;   
+                
+                position: absolute;
+                left: 0;
+                top: 0;
+           }
+        }
+        
+        .post {
+            margin-bottom: $global-margin;  
+            
+            .video {
+                height: auto; 
+                padding-top: 58%;
+            }
+            
+            h3:hover {
+                color: $pink;   
+            }
+        }
+    }
+    
+    .widget_trending-posts,
+    .widget_recommended-posts {
+        
+        .widget-title {
+           position: relative;
+           padding-left: 44px;
+           min-height: 54px;
+           
+           &:before {
+                content: '';
+                display: block;
+                background-image: url(assets/images/icons/female.svg);
+                background-size: contain;
+                width: 34px;
+                height: 54px;   
+                
+                position: absolute;
+                left: 0;
+                top: 0;
+           }
+        }
+        
+        .post {
+            margin-bottom: 15px;
+            @extend .clearfix;
+            
+            img {
+                float: left;
+                margin-right: 15px;   
+            }
+            
+            h5 {
+                overflow: hidden;   
+            }
+            
+            &:hover h5 a {
+                color: $pink;
+            }
+        }
+    }
+    
+}
+
+
+.widget_authors {
+    
+    .post {
+        margin-bottom: 15px;
+        @extend .clearfix;
+        
+        img {
+            float: left;
+            margin-right: 15px;   
+        }
+        
+        div {
+            overflow: hidden;   
+        }
+        
+        a:hover h4 {
+            color: $pink;
+        }
+    }   
+}
+
+
+.share-icons {
+
+	margin: 0;
+	vertical-align: middle;
+	
+
+	&:before {
+		content: 'Share This:';	
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 20px;
+		color: #fff;
+		padding-right: 12px;
+		line-height: 32px;
+		
+		@media only screen and (max-width : 639px) {
+			display: none;
+		}
+	}
+	
+	li {
+		list-style-type: none;
+		display: inline-block;
+		margin: 0 0 0 10px;
+		vertical-align: middle;
+		
+		&:first-child {
+			margin-left: 0;	
+		}
+		
+		a {
+			background: $anchor-color;
+			border-radius: 50%;
+			width: 46px;
+			height: 46px;
+			display: block;
+			position: relative;
+            
+            &:hover {
+                background: #fff;   
+                
+                svg {
+                    fill: $dark-gray;   
+                }
+            }
+		}
+		
+		svg {
+            fill: #fff;  
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%); 
+        }
+	
+		
+	}
+	
+}

@@ -1,0 +1,657 @@
+// Modals
+
+
+
+// fix reveal overflow, we don't want it hidden
+ body.is-reveal-open {
+    overflow-y: auto!important;
+}
+
+.reveal:focus{
+    outline: none;
+}
+
+.reveal-overlay {
+    background-color: rgba(51,51,51,.7);
+}
+
+.reveal {
+	
+    .logged-in & {
+         
+        top: 46px!important;
+        
+        @media screen and (min-width: 783px) {
+            top: 32px!important;
+        }
+        
+        
+    }
+    
+    background: transparent;  
+    border: none;
+    padding-top: 60px;
+    
+    .close-button {
+		position: absolute;
+		top: 0;
+		right: 10px;
+		font-size: 50px;
+        font-weight: 300;
+        line-height: 50px;
+		outline: none;
+        color: #fff;
+        cursor: pointer;
+   	}
+    
+    @include breakpoint(large) {
+        
+        padding-top: 90px;
+        
+        .close-button {
+            font-size: 70px;
+            line-height: 70px;
+        }
+    }
+    
+}
+
+
+#modal-menu {
+    top: 0!important;
+    left: 0;
+    height: 100vh;
+    min-height: 100vh;
+    max-width: 100%;
+    width: 100%;
+    position: fixed;
+    background: $light-gray;
+    padding: 0;
+    
+     @include breakpoint(medium) {
+        width: auto;
+        max-width: 390px;
+     }
+    
+    .close-button {
+		position: absolute;
+		top: 40%;
+        transform: translateY(-50%);
+		right: 10px;
+		font-size: 40px;
+		outline: none;
+        color: #000;
+        cursor: pointer;
+        font-weight: 300;
+        z-index: 9;
+  	}
+    
+    .site-title {
+        background: #fff;
+        position: relative;
+        padding: 7px 15px;
+        
+        
+        a {
+            display: block;
+            max-width: 200px;   
+        }
+    }
+}
+
+ 
+.modal-menu .nav-primary .menu > li:first-child {
+	border: none;
+}
+
+
+.modal-menu .menu {
+    
+    li {
+        list-style-type: none;
+        width: 100%;
+        position: relative;
+        margin: 5px 0;
+        display: block;
+    
+        a {
+            color: $white;
+            font-size: 16px;
+            padding: 5px 5px 5px 15px;
+            display: inline-block;
+            i {
+                font-style: normal;
+            }
+        }
+        
+        .sub-menu li a {
+            padding-left: 30px;
+        }
+    }   
+}
+
+
+.modal-menu .nav-primary {
+    
+    background: $pink;
+    
+    li {
+        a {
+            color: $white;
+            
+            &:hover,
+            &.current-menu-item,
+            &.current_page_parent,
+            &.current-page-ancestor,
+            &.current-menu-ancestor,
+            &.current-menu-parent,
+            &.current-category-ancestor {
+                color: $dark-gray;
+            }
+        }
+        
+    }
+}
+
+
+.modal-menu .nav-secondary {
+        
+    li {
+        a {
+            color: $dark-gray;
+            
+            &:hover,
+            &.current-menu-item,
+            &.current_page_parent,
+            &.current-page-ancestor,
+            &.current-menu-ancestor,
+            &.current-menu-parent,
+            &.current-category-ancestor {
+                    color: $pink;
+            }
+        }
+        
+    }
+}
+
+
+.modal-menu {
+    
+    
+    .search-form {
+       padding: 0 15px; 
+       background: $pink;
+       text-align: center;
+     }
+    
+    /*
+    .gform_widget {
+        padding: 15px 15px 15px;
+        
+        .validation_error {
+            display: none;   
+        }
+        
+        .validation_message {
+            padding: 5px 0 0!important;  
+            font-weight: 400; 
+        }
+        
+        .gform_wrapper {
+            margin: 0;   
+        }
+        
+        .gform_wrapper.gform_validation_error .gform_body ul li.gfield.gfield_error:not(.gf_left_half):not(.gf_right_half) {
+            max-width: 100%!important;
+        }
+        
+        .widget-title {
+            margin-bottom: 10px;   
+        }
+        
+        form {
+            
+            display: flex;
+            width: 100%;
+            
+            > * {
+                width: auto; 
+                padding: 0;
+                margin: 0;
+                clear: none;  
+            }
+            
+            .gform_body {
+                
+                flex-grow: 1;
+                
+                .ginput_container {
+                    margin: 0;
+                    padding: 0;   
+                }
+                
+                .gfield {
+                    margin: 0;
+                    padding: 0;   
+                }
+                
+                .gfield_error {
+                    width: 100%;
+                    border: none!important;
+                 }
+                
+                input {
+                    width: 100%; 
+                    outline: none;
+                    //border: 1px solid #979797;
+                    border: none;
+                    box-shadow: inset 0 0 4px 0 rgba(#000, .2);
+                    height: 42px;
+                    margin: 0;
+                    padding: 0 10px!important;
+                    font-size: 16px;
+                }
+                
+                input[type="text"] {
+                    -webkit-appearance: none;
+                    border-radius: 0;
+                }
+            }
+            
+            .gform_footer {
+                 .gform_button {
+                    background-color: $pink;
+                    border: none;
+                    outline: none;
+                    padding: 5px;
+                    text-transform: uppercase;
+                    
+                    &:hover {
+                        background-color: $dark-gray;   
+                    }
+                    
+                    span {
+                        display: block;
+                        width: 100px;
+                        border: 1px solid #fff; 
+                        height: 32px;
+                        line-height: 32px;
+                        color: #fff; 
+                    }
+                    
+                    @include breakpoint(480) {
+                        span {
+                            width: 140px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    */
+    
+    .gform_widget {
+        padding: 15px 15px 15px;
+         
+        .validation_error {
+            display: none;   
+        }
+        
+        .validation_message {
+            padding: 5px 0 0!important;  
+            font-weight: 400; 
+        }
+        
+        .gform_wrapper {
+            margin: 0;   
+        }
+        
+        .gform_wrapper.gform_validation_error .gform_body ul li.gfield.gfield_error:not(.gf_left_half):not(.gf_right_half) {
+            max-width: 100%!important;
+        }
+        
+        .gform_wrapper .top_label .gfield_error {
+            width: auto!important;
+        }
+        
+        .gform_validation_error .gform_footer {
+            bottom: 23px;   
+        }
+        
+        .widget-title {
+            margin-bottom: 10px;   
+        }
+        
+        form {
+            max-width: 420px;
+            margin: 0 auto;
+            position: relative;
+            
+            > * {
+                width: auto; 
+                padding: 0;
+                margin: 0;
+                clear: none;  
+            }
+            
+            .gform_body {
+                
+                 .ginput_container {
+                    margin: 0;
+                    padding: 0;   
+                }
+                
+                #field_2_1 {
+                    margin-right: 110px; 
+                    
+                    @include breakpoint(480) {
+                        margin-right: 150px; 
+                    }
+                }
+                
+                .gfield {
+                    margin: 0;
+                    padding: 0;   
+                }
+                
+                .gfield_error {
+                    width: 100%;
+                    border: none!important;
+                 }
+                 
+                 .ginput_container_radio {
+                     
+                     @include breakpoint(medium) {
+                        text-align: center;
+                    }
+                 }
+                 
+                .gfield_radio {
+                    
+                    display: inline-block; 
+                    width: 100%!important; 
+                    
+                    li {
+                        
+                        @include breakpoint(large) {
+                            padding: 0 15px!important;   
+                        }
+                        
+                        line-height: 20px;
+                        
+                        input {
+                            margin-top: 0!important;   
+                        }
+                        
+                        label {
+                            font-size: 14px;
+                         }
+                    }
+                }
+                
+                input[type="text"] {
+                    width: 100%; 
+                    outline: none;
+                    border: none;
+                    box-shadow: inset 0 0 4px 0 rgba(#000, .2);
+                    height: 42px;
+                    margin: 0;
+                    padding: 0 10px!important;
+                    font-size: 16px;
+                }
+                
+                input[type="text"] {
+                    -webkit-appearance: none;
+                    border-radius: 0;
+                }
+            }
+            
+            .gform_footer {
+                 
+                 position: absolute;
+                 right: 0;
+                 bottom: 0;
+                 
+                 .gform_button {
+                    background-color: $pink;
+                    border: none;
+                    outline: none;
+                    padding: 5px;
+                    text-transform: uppercase;
+                    
+                    &:hover {
+                        background-color: $dark-gray;   
+                    }
+                    
+                    span {
+                        display: block;
+                        width: 100px;
+                        border: 1px solid #fff; 
+                        height: 32px;
+                        line-height: 32px;
+                        color: #fff; 
+                    }
+                    
+                    @include breakpoint(480) {
+                        span {
+                            width: 130px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+div.modal-contact {
+ 	background-color: #EFF3F1;
+    
+     .modal-title {
+ 
+        background-color: $pink;
+        padding: 30px 30px;
+        
+        @media only screen and (min-width : 641px) {
+			padding: 30px 46px;
+		}
+		
+        h4 {
+            color: #fff;
+            font-size: 22px;
+			margin-bottom: 0;
+		}
+		
+	}
+  	
+	.modal-description {
+ 
+        padding: 15px 30px 0;
+        
+        @media only screen and (min-width : 641px) {
+			padding: 15px 46px 0;
+		}
+  
+		p {
+			font-size: 14px;
+ 		}
+		
+	}
+    
+    .modal-form {
+        padding: 0 30px 20px;
+        
+        
+    }
+
+	.gform_wrapper {
+		
+        @media only screen and (min-width : 641px) {
+				padding-left: 16px;
+		}
+	}
+    
+    
+    .gform_wrapper {
+        
+        margin-top: 4px!important;	
+        
+        ul {
+            li {
+                list-style-type: none;	
+            }
+        }
+            
+        ul.gform_fields li.gfield.gfield_error+li.gfield.gfield_error {
+            margin-top: 16px!important;
+        }
+        
+        
+        li.gfield.gfield_error.gfield_contains_required div.ginput_container,
+        li.gfield.gfield_error.gfield_contains_required label.gfield_label {
+            margin-top: 0!important;
+        }
+        
+        
+        input[type="text"], select, textarea {
+             outline: none;	
+            border: 1px solid #979797;
+            background-color: #FFFFFF;
+        }
+        
+        input[type="text"] {
+            padding: 12px 12px 13px 12px!important;
+            margin-top: 0!important;	
+        }
+        
+        
+        select {
+             padding: 10px!important;
+        }
+        
+        textarea {
+            margin-top: 8px;	
+            padding: 12px!important;
+        }
+        
+        select {
+            -webkit-appearance: none;
+            -webkit-border-radius: 0px;
+            background-image: url("data:image/svg+xml;utf8,<svg width='16' height='9' viewBox='0 0 16 9' xmlns='http://www.w3.org/2000/svg'><title>Fill 4</title><path d='M.758.75C.588.91.5 1.13.5 1.343c0 .212.09.433.258.594l6.617 6.316c.17.16.392.246.624.246.23 0 .453-.085.622-.246l6.617-6.316c.347-.33.347-.858 0-1.19-.348-.33-.9-.33-1.247 0L8 6.47 2.004.75C1.658.427 1.097.427.758.75z' fill='#252b33' fill-rule='evenodd'/></svg>");
+            background-position: 100% 50%;
+            background-repeat: no-repeat;	
+            
+        }
+        
+        .validation_error {
+            margin-bottom: 0!important;
+            padding: 5px 0 0!important;
+            text-align: center;	
+        }
+    
+        .gform_footer {
+            text-align: center;
+            
+            .gform_button {
+                    background-color: transparent;
+                    border: 1px solid $dark-gray;
+                    outline: none;
+                    padding: 5px;
+                    text-transform: uppercase;
+                    
+                    span {
+                        display: block;
+                        width: 180px;
+                        border: 1px solid $dark-gray; 
+                        height: 30px;
+                        line-height: 28px;
+                        color: $dark-gray; 
+                    }
+                    
+                    &:hover {
+                        background-color: $pink;
+                        border-color: #fff;
+                        
+                        span {
+                            border-color: #fff;
+                            color: #fff;   
+                        }
+                    }
+                    
+                    
+                }
+        }
+    
+    
+    }
+
+}
+
+
+
+
+.modal-search .search-form {
+    
+        padding: 0; 
+       background: $pink;
+       text-align: center;
+     
+    
+    
+    form > * {
+        margin: 0!important;   
+        
+    }
+    
+    @include breakpoint(large) {
+        select,
+        .search-field,
+        .search-submit {
+              height: 54px;
+             font-size: 18px;
+          }
+    }
+    
+    select {
+        background-color: $pink!important;
+        color: #fff;
+        
+        background-image: url("data:image/svg+xml;utf8,<svg width='16' height='9' viewBox='0 0 16 9' xmlns='http://www.w3.org/2000/svg'><title>Fill 4</title><path d='M.758.75C.588.91.5 1.13.5 1.343c0 .212.09.433.258.594l6.617 6.316c.17.16.392.246.624.246.23 0 .453-.085.622-.246l6.617-6.316c.347-.33.347-.858 0-1.19-.348-.33-.9-.33-1.247 0L8 6.47 2.004.75C1.658.427 1.097.427.758.75z' fill='#fff' fill-rule='evenodd'/></svg>");
+        
+        @include breakpoint(medium) {
+              width: 40%;
+        }
+        
+        @include breakpoint(large) {
+            background-image: url("data:image/svg+xml;utf8,<svg width='22' height='14' viewBox='0 0 22 14' xmlns='http://www.w3.org/2000/svg'><path d='M.93 1.165c-.24.256-.368.607-.368.944 0 .336.127.687.368.943l9.445 10.018c.24.257.56.392.89.392.33 0 .648-.135.89-.39L21.6 3.05c.495-.525.495-1.36 0-1.887-.496-.526-1.284-.526-1.78 0l-8.555 9.074L2.71 1.164c-.496-.512-1.297-.512-1.78 0z' fill='#fff' fill-rule='evenodd'/></svg>");
+            background-position: 94% 50%;
+            padding: 10px 25px 10px 10px;   
+        }
+       
+    }
+    
+    
+    
+    .search-field {
+        flex-grow: 1; 
+        
+        @include breakpoint(480) {
+            width: auto;
+        } 
+    }
+    
+    .search-submit {
+        
+        background-color: $pink;
+        
+        @include breakpoint(large) {
+           width: 54px;
+        }
+        
+        
+        svg path {
+            fill: #fff!important; 
+        }
+    }
+    
+}

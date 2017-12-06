@@ -1,0 +1,37 @@
+@mixin button() {
+    display: block;
+    width: 260px;
+    background-color: transparent;
+    outline: none;
+    text-transform: uppercase;
+    text-decoration: none!important;
+    text-align: center;
+}
+
+
+@mixin button_primary() {
+    
+    @include button;
+    
+    background-color: $pink;
+    padding: 5px;
+    color: #fff; 
+     
+    span {
+        display: block;
+        border: 1px solid #fff; 
+        color: #fff; 
+        padding: 8px 5px;
+    }
+    
+    &:hover {
+        background-color: $dark-gray;
+     }
+    
+}
+
+
+
+.btn-primary {
+    @include button_primary;   
+}

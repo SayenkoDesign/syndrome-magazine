@@ -1,0 +1,93 @@
+.slick-slider {
+    visibility: hidden;
+    
+    &.slick-initialized {
+        visibility: visible;  
+    }
+    
+    .slick-arrow {
+		position: absolute;
+		top: 0;
+		opacity: .5;	
+		transition: ease opacity 0.3s;
+		cursor: pointer;
+		width: 30px;
+		height: 30px;
+ 		background-size: contain;
+		background-repeat: no-repeat;
+		
+		span {
+			@extend .screen-reader-text;
+		}
+		
+		&.arrow-left {
+			right: 50px;
+			background-image: url('assets/images/arrow-left.svg');
+		}
+		
+		&.arrow-right {
+			right: 0;
+			background-image: url('assets/images/arrow-right.svg');	
+		}
+		
+		&:hover {
+			opacity: 1;	
+		}
+	}
+}
+
+
+.slick-videos {
+    
+    opacity: 0;
+    visibility: visible;  
+    
+    &.slick-initialized {
+        opacity: 1;
+        transition: opacity .2s ease-in-out;
+    }
+    
+    
+    padding: 40px 0 0;
+    margin-left: -16px;  
+    
+    .slick-track {
+        
+    }
+    
+    .slick-slide a {
+        display: block;
+        padding-left: 16px; 
+        
+    }
+       
+}
+
+
+.slick-posts {
+    
+    opacity: 0;
+    visibility: visible;  
+    
+    &.slick-initialized {
+        opacity: 1;
+        transition: opacity .2s ease-in-out;
+        
+        .column {
+            width: auto;  
+            padding-left: map-get($grid-column-gutter, medium); 
+            padding-right: 0; 
+        }
+    }
+    
+    
+    padding: 40px 0;
+    margin-left: map-get($grid-column-gutter, medium) * -1;  
+    
+    .slick-track {
+        
+    }
+    
+
+       
+}
