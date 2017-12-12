@@ -154,19 +154,19 @@ msgstr ""
 msgid "Trending Videos"
 msgstr ""
 
-#: lib/functions/front-page.php:230
+#: lib/functions/front-page.php:236
 msgid "Post Cards"
 msgstr ""
 
-#: lib/functions/front-page.php:339
+#: lib/functions/front-page.php:345
 msgid "Recent"
 msgstr ""
 
-#: lib/functions/front-page.php:448
+#: lib/functions/front-page.php:454
 msgid "Recommended"
 msgstr ""
 
-#: lib/functions/front-page.php:542
+#: lib/functions/front-page.php:540
 msgid "PMS Videos"
 msgstr ""
 

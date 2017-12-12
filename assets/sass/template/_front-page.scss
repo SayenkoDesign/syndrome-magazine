@@ -12,6 +12,10 @@
     }
 }
 
+.home .post h4 {
+    font-family: 'Raleway', sans-serif;   
+}
+
 .callout {
     padding: 20px 0 26px;
     text-align: center;
@@ -180,6 +184,19 @@
 }
 
 // Posts
+
+.home .recent-posts {
+    @include breakpoint(large) {
+        margin-top: -20px;
+    }
+}
+
+ .home #secondary {
+    @include breakpoint(large) {
+        margin-top: 48px;
+    }
+}
+
 .home .recent-posts,
 .home .recommended-posts {
     
@@ -260,6 +277,7 @@
         
         h4 {
             position: relative;
+            font-family: 'Raleway', sans-serif;
         }
     }
 }
