@@ -4053,7 +4053,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         });
 
         $el2.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-            new Foundation.Equalizer($(".slick-posts")).applyHeight();
+            //new Foundation.Equalizer($(".slick-posts")).applyHeight();
         });
 
         $el2.slick({
@@ -4061,6 +4061,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             //centerMode: true,
             slidesToShow: 3,
             arrows: true,
+            adaptiveHeight: true,
             nextArrow: '<div class="arrow-right"><span>Next</span></div>',
             prevArrow: '<div class="arrow-left"><span>Previous</span></div>',
             responsive: [{

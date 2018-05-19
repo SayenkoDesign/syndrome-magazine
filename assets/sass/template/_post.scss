@@ -78,12 +78,15 @@
         
         .entry-content {
                      
-            p:first-of-type {
+            p:first-of-type,
+            h3 {
                 font-size: 22px;
-                line-height: 28px;  
+                line-height: 28px; 
+                margin-bottom: 30px; 
+                font-family: 'Raleway', sans-serif;
             }
             
-            p:first-of-type:first-letter {
+            > p:first-of-type:first-letter {
                 color: $pink;
                 font-size: 56px;
                 line-height: 42px; 
@@ -93,6 +96,17 @@
                 padding-left: 3px;  
             }
             
+            p {
+                font-size: 18px;   
+            }
+            
+            img {
+                margin-bottom: $global-margin;
+            }
+            
+            figure img {
+                margin-bottom: 0;   
+            }
             
             @include breakpoint(large) {
                 

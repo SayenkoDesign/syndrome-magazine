@@ -33,9 +33,11 @@ section_featured_posts();
             
             section_recent();
             
+            section_recommended();
+            
             section_post_cards();
       
-            section_recommended();
+            
 	
 	        ?>
 

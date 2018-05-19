@@ -6,7 +6,7 @@ function _s_load_google_fonts() {
 	// change array as needed
 	$font_families = array(
 			'Playfair+Display:400,400i',
-            'Raleway:400,500'
+            'Raleway:400,500,700'
 		);
 
 	// do not touch below here:

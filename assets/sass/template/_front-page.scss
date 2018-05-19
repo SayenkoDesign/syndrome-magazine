@@ -2,18 +2,29 @@
 // Front Page
 //
 .home .site-main section {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .home .site-content {
      .content-area,
     .widget-area {
-        padding-bottom: 20px;     
+        
+        @include breakpoint(large) {
+            padding-bottom: 20px;     
+        }
     }
 }
 
 .home .post h4 {
     font-family: 'Raleway', sans-serif;   
+}
+
+.home .recent-posts .slick-slider {
+    padding-bottom: 0;
+    
+    .column .post:last-child {
+        margin-bottom: 0;   
+    }
 }
 
 .callout {
@@ -151,9 +162,6 @@
 }
 
 .post-cards {
-    header {
-        margin-bottom: 30px;
-    }
      
     .cards {
         opacity: 0;
@@ -163,7 +171,7 @@
             transition: opacity .2s ease-in-out;
             margin-left: map-get($grid-column-gutter, medium) * -1;  
          }
-        padding: 40px 0;
+
          .slick-track {}
         .slick-slide {
             display: block;
@@ -193,22 +201,32 @@
 
  .home #secondary {
     @include breakpoint(large) {
-        margin-top: 48px;
+        margin-top: 39px;
     }
 }
 
 .home .recent-posts,
 .home .recommended-posts {
     
+    margin-bottom: 30px;
+    
     header {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
       
     .column>div {
         margin-bottom: $global-margin;
     }
-    .slick-slide>div {
+    .slick-slide>div:not(:last-child) {
         margin-bottom: $global-margin;
+    }
+    
+    .slick-slider {
+        padding-bottom: 0;
+    }
+    
+    .column .post:last-child {
+        margin-bottom: 0;   
     }
 }
 
@@ -216,11 +234,16 @@
 
 .home {
      .slick-initialized {
-        padding-top: 10px;
-        margin-top: -20px; 
+       padding-top: 40px;
+       margin-top: -40px;
         
+        
+    }
+    
+    .slick-posts,
+    .cards {
         .slick-arrow {
-            margin-top: -30px;   
+            margin-top: -10px;   
         }
     }
 }
@@ -402,6 +425,7 @@
     header {
         text-align: center;
     }
+    
 }
 
 .home #secondary {

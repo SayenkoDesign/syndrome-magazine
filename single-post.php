@@ -132,7 +132,7 @@ function section_related_posts() {
         $title = sprintf( '<a href="%s" class="post-description" data-equalizer-watch><h3>%s</h3>%s</a>', 
                           get_permalink(), get_the_title(), $subtitle );
          
-        return sprintf( '<div><div class="post %s">%s%s%s</div></div>', $term_class, $image, $cat, $title );   
+        return sprintf( '<div class="column"><div class="post %s">%s%s%s</div></div>', $term_class, $image, $cat, $title );   
     }
 
 ?>

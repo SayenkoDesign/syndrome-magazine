@@ -45,11 +45,13 @@
     &.slick-initialized {
         opacity: 1;
         transition: opacity .2s ease-in-out;
+        //margin-top: -40px;
     }
     
     
     padding: 40px 0 0;
-    margin-left: -16px;  
+    //margin-left: -16px;  
+    margin-left: map-get($grid-column-gutter, medium) * -1; 
     
     .slick-track {
         
@@ -57,8 +59,8 @@
     
     .slick-slide a {
         display: block;
-        padding-left: 16px; 
-        
+        //padding-left: 16px; 
+        padding-left: map-get($grid-column-gutter, medium);
     }
        
 }

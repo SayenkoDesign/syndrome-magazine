@@ -233,7 +233,7 @@ function section_post_cards() {
     
     _s_section_open( $attr );	
     
-    printf( '<div class="column row"><header><h2>%s</h2></header></div>', __( 'Postcards', '_s' ) );		
+    printf( '<div class="column row"><header><h2>%s</h2></header></div>', __( 'Post Cards', '_s' ) );		
     
     print( '<div class="column row">' );
     
@@ -273,10 +273,20 @@ function section_recent() {
 
     $posts = [];
     
+    $counter = 0;
+    
+    $i = 0;
+    
     if ( $loop->have_posts() ) : 
          while ( $loop->have_posts() ) : $loop->the_post(); 
+              
+            if( $counter % 2 == 0 ) {
+                $i++;
+            }
              
             $posts[] = _get_post();
+            
+            $counter++;
            
          endwhile;
       
@@ -303,16 +313,34 @@ function section_recent() {
     
     $out = '';
     
+    if( count( $posts ) > 3 ) {
         
-    $posts = array_chunk( $posts, 2 );
-            
-    foreach( $posts as $p ) {
-         $out .= sprintf( '<div class="column">%s</div>', implode( '', $p ) );
-    }
+        $posts = array_chunk( $posts, 2 );
+        
+        $class = ( count( $posts ) > 6 ) ? '' : ' class="column"';
+        
+        foreach( $posts as $p ) {
+             $out .= sprintf( '<div%s>%s</div>', $class, implode( '', $p ) );
+        }
+           
+        
+        if( count( $posts ) > 3 ) {
+            $slick = ' has-slick';
+            $out = sprintf( '<div class="slick-posts">%s</div>', $out );
+        }
+        else {
+            $out = sprintf( '<div class="row small-up-1 medium-up-2 xlarge-up-3">%s</div>', $out ); 
+        }
     
-    $slick = ' has-slick';
-    $out = sprintf( '<div class="slick-posts">%s</div>', $out );
-  
+        
+    }
+    else {
+        foreach( $posts as $p ) {
+             $out .= sprintf( '<div class="column">%s</div>', $p );
+        }
+                    
+        $out = sprintf( '<div class="row small-up-1 medium-up-2 xlarge-up-3">%s</div>', $out );
+    }
                 
     printf( '<div class="recent-posts%s"><header><h2>%s</h2></header>%s</div>', $slick, __( 'Recent', '_s' ), $out );	
 
@@ -329,7 +357,7 @@ function section_recommended() {
     
     $query_args = array(
             'post_type'      => 'post',
-            'posts_per_page' => 20,
+            'posts_per_page' => -1,
             'post_status'    => 'publish',
             'meta_query' => array(
                  array(
@@ -349,56 +377,81 @@ function section_recommended() {
     }
     
     
-    // Use $loop, a custom variable we made up, so it doesn't overwrite anything
-    $loop = new WP_Query( $query_args );
-
-    $posts = [];
-
-    if ( $loop->have_posts() ) : 
-         while ( $loop->have_posts() ) : $loop->the_post(); 
-
-            $posts[] = _get_post();
-                       
-         endwhile;
-      
-     else:
-     
-      
-     endif;
-
-    // We only need to reset the $post variable. If we overwrote $wp_query,
-    // we'd need to use wp_reset_query() which does both.
-    wp_reset_postdata();
+        // Use $loop, a custom variable we made up, so it doesn't overwrite anything
+        $loop = new WP_Query( $query_args );
     
-    if( empty( $posts ) ) {
-        return false;
-    }
-    
-    $slick = false;
-    
-    // Add the ad block
-    
-    if( !empty( $ad_block ) ) {
-        array_splice($posts, 1, 0, $ad_block );
-    }
-    
-    $out = '';
-    
-    $posts = array_chunk( $posts, 2 );
-            
-    foreach( $posts as $p ) {
-         $out .= sprintf( '<div class="column">%s</div>', implode( '', $p ) );
-    }
-    
-    if( count( $posts ) > 3 ) {
-        $slick = ' has-slick';
-        $out = sprintf( '<div class="slick-posts">%s</div>', $out );
-    }
-    else {
-        $out = sprintf( '<div class="row small-up-1 medium-up-2 xlarge-up-3">%s</div>', $out ); 
-    }    
+        $posts = [];
+        
+        $counter = 0;
+        
+        $i = 0;
+        
+        if ( $loop->have_posts() ) : 
+             while ( $loop->have_posts() ) : $loop->the_post(); 
+                  
+                if( $counter % 2 == 0 ) {
+                    $i++;
+                }
+                 
+                $posts[] = _get_post();
                 
-    printf( '<div class="recommended-posts%s"><header><h2>%s</h2></header>%s</div>', $slick, __( 'Recommended', '_s' ), $out );	
+                $counter++;
+               
+             endwhile;
+          
+         else:
+         
+          
+         endif;
+    
+        // We only need to reset the $post variable. If we overwrote $wp_query,
+        // we'd need to use wp_reset_query() which does both.
+        wp_reset_postdata();
+        
+        if( empty( $posts ) ) {
+            return false;
+        }
+        
+        $slick = false;
+        
+        // Add the ad block
+        
+        if( !empty( $ad_block ) ) {
+            array_splice($posts, 1, 0, $ad_block );
+        }
+        
+        $out = '';
+        
+        if( count( $posts ) > 3 ) {
+            
+            $posts = array_chunk( $posts, 2 );
+            
+            $class = ( count( $posts ) > 6 ) ? '' : ' class="column"';
+            
+            foreach( $posts as $p ) {
+                 $out .= sprintf( '<div%s>%s</div>', $class, implode( '', $p ) );
+            }
+               
+            
+            if( count( $posts ) > 3 ) {
+                $slick = ' has-slick';
+                $out = sprintf( '<div class="slick-posts">%s</div>', $out );
+            }
+            else {
+                $out = sprintf( '<div class="row small-up-1 medium-up-2 xlarge-up-3">%s</div>', $out ); 
+            }
+
+            
+        }
+        else {
+            foreach( $posts as $p ) {
+                 $out .= sprintf( '<div class="column">%s</div>', $p );
+            }
+                        
+            $out = sprintf( '<div class="row small-up-1 medium-up-2 xlarge-up-3">%s</div>', $out );
+        }
+                    
+        printf( '<div class="recommended-posts%s"><header><h2>%s</h2></header>%s</div>', $slick, __( 'Recommended', '_s' ), $out );	
 
 }
 
