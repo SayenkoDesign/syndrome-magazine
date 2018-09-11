@@ -175,33 +175,24 @@ function _get_secondary_post( $_post ) {
 
 
 function section_post_cards() {
-    
+     
     $sb_instagram_settings = get_option('sb_instagram_settings');
 
-	$access_token = isset( $sb_instagram_settings['sb_instagram_at'] ) ? $sb_instagram_settings['sb_instagram_at'] : '';
+    //Access token
+    isset($sb_instagram_settings[ 'sb_instagram_at' ]) ? $sb_instagram_at = trim($sb_instagram_settings['sb_instagram_at']) : $sb_instagram_at = '';
     
-    echo $access_token;
-    
-    echo 'https://api.instagram.com/v1/users/self/?access_token=' . sbi_maybe_clean( $sbi_options['sb_instagram_at'] );
-         
-    $sb_instagram_settings = get_option('sb_instagram_settings');
-    
-    $user_id = $sb_instagram_settings[ 'sb_instagram_user_id' ][0];
-    
-    $access_token = $sb_instagram_settings['connected_accounts'][$user_id]['access_token'];
-    
-    echo $access_token;
-    
-    $url = sprintf( 'https://api.instagram.com/v1/users/%s/media/recent/?access_token=%s', $user_id, $access_token );
-    
-    echo $url;
+    $user_id = $sb_instagram_settings[ 'sb_instagram_user_id' ];
         
+    
     if ( false === ( $feed = get_transient( 'sb_instagram_feed' ) ) ) :
-                    
+    
+        $url = sprintf( 'https://api.instagram.com/v1/users/%s/media/recent/?access_token=%s', $user_id, $sb_instagram_at );
+        
         $request = wp_remote_get( $url, array( 'timeout' => 2 ) );
         
-        if( is_wp_error( $request ) ) 
-            return false; // Bail early
+        if( is_wp_error( $request ) ) {
+            return false; // Bail early   
+        }
     
         $feed = wp_remote_retrieve_body( $request );
         
@@ -210,7 +201,11 @@ function section_post_cards() {
     endif;
     
     
-    $response = json_decode( $feed );   
+    $response = json_decode( $feed );  
+    
+    if( is_user_logged_in() ) {
+        // var_dump( $response );
+    } 
     
     if( empty( $response ) ) {
         return false;

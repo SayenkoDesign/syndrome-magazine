@@ -5,9 +5,9 @@ function load_addtoany_scripts() {
 		wp_register_script( 'addtoany', '//static.addtoany.com/menu/page.js', FALSE, NULL, TRUE );
  		//wp_register_script( 'addtoany-config', THEME_JS . '/addtoany-config.js', array('addtoany'), NULL, TRUE );
  		
-		if( is_home() || is_category() || is_author() || is_singular( 'post' ) ) {
+		//if( is_home() || is_category() || is_author() || is_singular( 'post' ) ) {
  			wp_enqueue_script( 'addtoany' );
- 		}
+ 		//}
 }
 
 function addtoany_share( $label = 'Share' ) {

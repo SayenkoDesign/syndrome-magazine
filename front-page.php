@@ -36,8 +36,6 @@ section_featured_posts();
             section_recommended();
             
             section_post_cards();
-      
-            
 	
 	        ?>
 

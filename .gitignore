@@ -1,4 +1,5 @@
 node_modules/
+bower_components/
 acf-json
 *.map
 maps/
@@ -13,3 +14,4 @@ compass_app_log.txt
 .AppleDouble
 .LSOverride
 todo.txt
+_notes
