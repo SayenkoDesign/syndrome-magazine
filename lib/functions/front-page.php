@@ -175,74 +175,18 @@ function _get_secondary_post( $_post ) {
 
 
 function section_post_cards() {
-     
-    $sb_instagram_settings = get_option('sb_instagram_settings');
-
-    //Access token
-    isset($sb_instagram_settings[ 'sb_instagram_at' ]) ? $sb_instagram_at = trim($sb_instagram_settings['sb_instagram_at']) : $sb_instagram_at = '';
-    
-    $user_id = $sb_instagram_settings[ 'sb_instagram_user_id' ];
-        
-    
-    if ( false === ( $feed = get_transient( 'sb_instagram_feed' ) ) ) :
-    
-        $url = sprintf( 'https://api.instagram.com/v1/users/%s/media/recent/?access_token=%s', $user_id, $sb_instagram_at );
-        
-        $request = wp_remote_get( $url, array( 'timeout' => 2 ) );
-        
-        if( is_wp_error( $request ) ) {
-            return false; // Bail early   
-        }
-    
-        $feed = wp_remote_retrieve_body( $request );
-        
-        set_transient( 'sb_instagram_feed', $feed, 6 * HOUR_IN_SECONDS );
-    
-    endif;
-    
-    
-    $response = json_decode( $feed );  
-    
-    if( is_user_logged_in() ) {
-        // var_dump( $response );
-    } 
-    
-    if( empty( $response ) ) {
-        return false;
-    }
-        
-    if( !isset( $response->data ) && empty( $response->data )  ) {
-        return false;
-    }
-    
-    $out = '';
-       
-    foreach ($response->data as $key => $item ) {
-        
-        //print_r( $item );
-        
-        $image = $item->images->standard_resolution->url;
-        $link = $item->link;
-        
-        if( !empty( $image ) ) {
-            $image = sprintf( '<img src="%s" />', $image );
-            $out .= sprintf( '<div><a href="%s" target="_blank">%s</a></div>', $link, $image );
-        }
-    }
-    
-    if( empty( $out ) ) {
-        return false;
-    }
+         
+    $shortcode = do_shortcode( '[instagram-feed layout="carousel" carouselrows="1" carouselarrows="true" showheader=false showfollow=false carouselpag=false carouselarrows=true showcaption=false cols=4 showlikes=false num=33]' );
     
     $attr = array( 'class' => 'section post-cards' );
     
     _s_section_open( $attr );	
     
-    printf( '<div class="column row"><header><h2>%s</h2></header></div>', __( 'Postcards', '_s' ) );		
+    printf( '<div class="column row"><header class="text-center"><h2>%s</h2></header></div>', __( 'Postcards', '_s' ) );		
     
     print( '<div class="column row">' );
     
-    printf( '<div class="cards">%s</div>', $out );
+    echo  $shortcode;
     
     print( '</div>' );
     _s_section_close();	
