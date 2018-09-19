@@ -97,6 +97,46 @@
             max-width: 200px;   
         }
     }
+    
+    .donate {
+        
+        background-color: $pink;
+        padding: 0 0 30px;
+        text-align: center;
+
+        a {
+            display: inline-block;           
+            background-color: transparent;
+            border: 1px solid $dark-gray;
+            color: $dark-gray;
+            outline: none;
+            padding: 5px;
+            text-transform: uppercase;
+            display: inline-block;            
+            
+            &:hover {
+                background-color: transparent;  
+                
+                border: 1px solid $white;
+                
+                span {
+                    border: 1px solid $white;  
+                    color: #fff; 
+                }
+            }
+            
+            span {
+                display: block;
+                width: auto;
+                padding: 0 15px;
+                border: 1px solid $dark-gray; 
+                height: 32px;
+                line-height: 32px;
+                color: $dark-gray; 
+                //whitespace: nowrap;
+            }  
+        }
+    }
 }
 
  

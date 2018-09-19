@@ -67,13 +67,46 @@ Header
     }
     
     .buttons,
-    .social-icons {
+    .social-icons,
+    .donate {
         
         @include breakpoint(large) {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             z-index: 9;
+        }
+    }
+    
+    .donate {
+        display: none;
+                
+        @include breakpoint(large) {
+            display: inline-block;           
+            background-color: $pink;
+            border: none;
+            outline: none;
+            padding: 5px;
+            text-transform: uppercase;
+            display: inline-block;
+            left: 120px;
+            margin-top: -3px;
+            
+            &:hover {
+                background-color: $dark-pink;   
+            }
+            
+            span {
+                display: block;
+                width: auto;
+                padding: 0 15px;
+                border: 1px solid #fff; 
+                height: 32px;
+                line-height: 32px;
+                color: #fff; 
+                //whitespace: nowrap;
+            }
+           
         }
     }
     
@@ -101,6 +134,7 @@ Header
             right: 0;
             top: 50%;
             transform: translateY(-50%);
+            
         }
         
     }

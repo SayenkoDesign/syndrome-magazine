@@ -50,6 +50,10 @@ if ( session_status() == PHP_SESSION_NONE ) {
                 <button type="button" class="search-toggle" data-toggle="modal-search">
 				<?php echo get_svg( 'search' ); ?>
                 <span class="screen-reader-text">Search</span></button>
+                
+                <?php
+                printf( '<a href="%s" class="donate"><span>Donate</span></a>', get_permalink( 1159 ) );
+                ?>
                 </div>
                 
                 <?php

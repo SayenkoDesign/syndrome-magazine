@@ -80,7 +80,7 @@ msgstr ""
 msgid "Widget area for %s"
 msgstr ""
 
-#: header.php:35
+#: header.php:37
 msgid "Skip to content"
 msgstr ""
 
@@ -154,20 +154,24 @@ msgstr ""
 msgid "Trending Videos"
 msgstr ""
 
-#: lib/functions/front-page.php:236
+#: lib/functions/front-page - Copy.php:236
 msgid "Post Cards"
 msgstr ""
 
-#: lib/functions/front-page.php:345
+#: lib/functions/front-page - Copy.php:345, lib/functions/front-page.php:266
 msgid "Recent"
 msgstr ""
 
-#: lib/functions/front-page.php:454
+#: lib/functions/front-page - Copy.php:454, lib/functions/front-page.php:350
 msgid "Recommended"
 msgstr ""
 
-#: lib/functions/front-page.php:540
+#: lib/functions/front-page - Copy.php:540, lib/functions/front-page.php:436
 msgid "PMS Videos"
+msgstr ""
+
+#: lib/functions/front-page.php:185
+msgid "Postcards"
 msgstr ""
 
 #: lib/functions/recommend.php:44

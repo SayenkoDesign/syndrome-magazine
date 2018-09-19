@@ -91,6 +91,8 @@ class RECOMMENDED_POSTS_WIDGET extends WP_Widget {
 			
 	// Widget Backend 
 	public function form( $instance ) {
+        
+        $post_count = self::POSTS_PER_PAGE;
 		
 		if ( isset( $instance[ 'title' ] ) ) {
 				$title = esc_attr( $instance[ 'title' ] );

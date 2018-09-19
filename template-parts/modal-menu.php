@@ -25,6 +25,8 @@ function modal_menu() {
             
             echo _s_get_social_icons();
             
+            printf( '<div class="donate"><a href="%s"><span>Donate</span></a></div>', get_permalink( 1159 ) );
+            
             get_search_form();
             ?>
             
