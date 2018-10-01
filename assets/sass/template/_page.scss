@@ -197,6 +197,19 @@ html, body {
        
 }
 
+
+.section.default {
+    padding-top: rem-calc(45);   
+    
+    .gform_footer {
+        
+        .button {
+            @include button_primary();      
+        }
+    }
+}
+
+
 #sbi_load {
     margin-top: 30px;    
 }
@@ -218,3 +231,5 @@ ul[class*="simple-sitemap"] {
         padding-bottom: 5px;   
     }
 }
+
+

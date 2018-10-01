@@ -366,6 +366,7 @@
             max-width: 420px;
             margin: 0 auto;
             position: relative;
+            display: flex;
             
             > * {
                 width: auto; 
@@ -377,21 +378,21 @@
             .gform_body {
                 
                  .ginput_container {
-                    margin: 0;
-                    padding: 0;   
+                    margin: 0!important;
+                    padding: 0!important;   
                 }
                 
                 #field_2_1 {
-                    margin-right: 110px; 
-                    
-                    @include breakpoint(480) {
-                        margin-right: 150px; 
-                    }
+                    margin-right: rem-calc(10); 
                 }
                 
                 .gfield {
                     margin: 0;
                     padding: 0;   
+                    
+                    a {
+                        text-decoration: underline;   
+                    }
                 }
                 
                 .gfield_error {
@@ -403,6 +404,18 @@
                      
                      @include breakpoint(medium) {
                         text-align: center;
+                    }
+                 }
+                 
+                 .gfield_checkbox {
+                    position: relative;
+                    @include breakpoint(medium) {
+                        width: 160%;  
+                        padding-top: 10px;
+                        
+                        input[type="checkbox"] {
+                            margin-top: 0;
+                        }
                     }
                  }
                  
@@ -448,9 +461,6 @@
             
             .gform_footer {
                  
-                 position: absolute;
-                 right: 0;
-                 bottom: 0;
                  
                  .gform_button {
                     background-color: $pink;
